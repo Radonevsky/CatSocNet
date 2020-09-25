@@ -1,0 +1,9 @@
+.news {
+    grid-area: c;
+    background-color: #d2e4fc;
+    padding: 30px;
+}
+
+.news img {
+    height: 200px;
+}

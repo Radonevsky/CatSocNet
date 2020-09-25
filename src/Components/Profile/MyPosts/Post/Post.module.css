@@ -1,0 +1,9 @@
+.item {
+    color: #990544
+}
+.item img{
+    width: 80px;
+    height: 50px;
+    border-radius: 40px;
+}
+

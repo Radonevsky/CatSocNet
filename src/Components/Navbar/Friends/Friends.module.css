@@ -1,0 +1,11 @@
+.fr {
+    font-size: small;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.fr img{
+    width: 40px;
+    height: 30px;
+    border-radius: 25px;
+}
+
