@@ -4,8 +4,8 @@ import {NavLink} from "react-router-dom";
 import Friends from "./Friends/Friends";
 
 const Navbar = (props) => {
-    let state = props.store.getState();
-    let friendsElements = state.sidebar.friends.map (fr => <Friends name={fr.name} avaPath={fr.avaPath}/>);
+    //let state = props.store.getState();
+    let friendsElements = props.friends.map (fr => <Friends name={fr.name} avaPath={fr.avaPath}/>);
     return <nav className={s.nav}>
         <div className={s.item}>
             <NavLink to="/profile" activeClassName={s.activeLink} >Profile</NavLink>
