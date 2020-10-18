@@ -16,6 +16,11 @@ let initialState = {
             avaPath: 'https://st.depositphotos.com/1766887/1938/i/950/depositphotos_19385931-stock-photo-portrait-of-young-attractive-man.jpg'
         },
         {
+            id: 43,
+            name:'Nikita',
+            avaPath: 'https://images.unian.net/pb/004/thumb_files/h_500/450595.jpg  '
+        },
+        {
             id: 4,
             name: 'Sonya',
             avaPath: 'https://kuprod.ru/picture/thumb/1415181?original=1&crop=1&rev=1&k=cqAf7wnwYmF-HNyhbJgfSQ'
@@ -31,6 +36,7 @@ let initialState = {
             name: 'Felix',
             avaPath: 'https://st3.depositphotos.com/1034382/35562/i/450/depositphotos_355629356-stock-photo-white-brown-shorthair-cat-cat.jpg'
         }
+
     ]
 };
 
