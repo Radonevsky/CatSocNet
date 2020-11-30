@@ -2,6 +2,7 @@ import React from 'react';
 import s from './ProfileInfo.module.css';
 import Preloader from "../../common/Preloader";
 import lookingForAJob from '../../../assets/images/lookingForAJob.jpg'
+import ProfileStatus from "./ProfileStatus";
 
 const ProfileInfo = (props) => {
     if (!props.profile) {
@@ -14,8 +15,9 @@ const ProfileInfo = (props) => {
                 src="https://i.pinimg.com/originals/73/c3/9d/73c39da4f5cd90a45598fb83c9342e5a.jpg"
                 alt="logo"/>
         </div>
+        <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
         <div className={s.profileWrapper}>
-                       <div className={s.largeUserPhoto}>
+            <div className={s.largeUserPhoto}>
                 <img src={props.profile.photos.large} alt=""/>
             </div>
 

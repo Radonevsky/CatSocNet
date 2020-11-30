@@ -17,20 +17,46 @@ export const usersAPI = {
                 return response.data;
             });
     },
-     getProfile(userId) {
-        return instance.get(`profile/${userId}`)
+    getProfile(userId) {
+        console.warn('Obsolete method. Please use profileAPI object')
+        return profileAPI.getProfile(userId)
     },
 
-    clickUnFollow (id) {
+    clickUnFollow(id) {
         return instance.delete(`follow/${id}`)
     },
 
-    clickFollow (id) {
+    clickFollow(id) {
         return instance.post(`follow/${id}`)
     }
 
 }
 
+export const profileAPI = {
+
+    getProfile(userId) {
+        return instance.get(`profile/${userId}`)
+    },
+
+    getStatus(userId) {
+        return instance.get(`profile/status/${userId}`)
+    },
+
+    updateStatus(status) {
+        return instance.put(`profile/status`, {status: status})
+    }
+}
+
+
 export const authAPI = {
-    me() {return instance.get(`auth/me`)}
+    me() {
+        return instance.get(`auth/me`)
+    },
+
+    login(formData) {
+      return instance.post('auth/login',
+          {email: formData.email,
+          password: formData.password,
+          rememberMe: formData.rememberMe})
+    }
 }

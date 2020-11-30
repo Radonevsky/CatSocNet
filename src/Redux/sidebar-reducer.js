@@ -23,7 +23,7 @@ let initialState = {
         {
             id: 4,
             name: 'Sonya',
-            avaPath: 'https://kuprod.ru/picture/thumb/1415181?original=1&crop=1&rev=1&k=cqAf7wnwYmF-HNyhbJgfSQ'
+            avaPath: 'https://forum.grodno.net/index.php?action=dlattach;topic=4146410.0;attach=2685201;image'
         },
         {id: 5, name: 'Ivi', avaPath: 'http://чихуахуа.рф/females/images/photo%20Berta/7.jpg'},
         {
