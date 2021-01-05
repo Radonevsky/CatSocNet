@@ -1,24 +1,23 @@
 import React from "react";
-import {authAPI} from "../../api/api";
 import LoginForm from "./LoginForm";
-import {setAuthUserData} from "../../Redux/auth-reducer";
+import {connect} from "react-redux";
+import {signIn} from "../../Redux/auth-reducer";
 
+class LoginContainer extends React.Component {
 
-const LoginContainer = (props) => {
-const onSubmit = (formData) => {
-    console.log(formData);
-    authAPI.login(formData)
-        .then(response => { console.log('А щас ответ сервака:');
-            console.log(response);
-        /*if (response.data.resultCode === 0) {
-            let {id, login, email} = response.data.data
-            dispatch(setAuthUserData(id, login, email))
-        }*/
-    });
+    onSubmit = (formData) => {
+        console.log('login pressed')
+        this.props.signIn(formData);
+
+    }
+
+    render() {
+        return <LoginForm onSubmit={this.onSubmit}/>
+    }
 }
-return <LoginForm onSubmit={onSubmit}/>
-        }
 
+let mapStateToProps = (state) => {
 
+}
 
-export default LoginContainer;
+export default connect (mapStateToProps, {signIn}) (LoginContainer);
