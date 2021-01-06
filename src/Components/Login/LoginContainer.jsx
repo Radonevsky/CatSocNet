@@ -19,5 +19,5 @@ class LoginContainer extends React.Component {
 let mapStateToProps = (state) => {
 
 }
-
+console.warn('mapStateToProps is empty!')
 export default connect (mapStateToProps, {signIn}) (LoginContainer);
