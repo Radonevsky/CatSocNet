@@ -1,28 +1,31 @@
 import React from "react";
 import {Field, Form} from "react-final-form";
+import {FORM_ERROR} from 'final-form'
 import s from './LoginForm.module.css';
+import {required,
+    maxLengthCreator,
+    minLengthCreator,
+    composeValidators} from './../../utils/validators/validators.js';
+import {Input} from "../common/FormsControls/FormsControls";
 
-const required = value => (value ? undefined : 'Required')
-//const hasError
 console.warn('Put the LoginForm style management in a separate file')
 const LoginForm = (props) => (
-
     <Form
         onSubmit={props.onSubmit}
-        render={({handleSubmit}) => (
+        render={({handleSubmit, submitError}) => (
             <form onSubmit={handleSubmit} className={s.form}>
                 <h2>Hello!</h2>
                 <div>
-                    <Field name="email" validate={required}>
+                    <Field name="email"
+                           validate={composeValidators(required, maxLengthCreator(10), minLengthCreator(4))}>
                         {({input, meta}) => {
                             let hasError = meta.error && meta.touched;
                             return (
                                 <div>
                                     <span className={hasError ? s.spanError : ''}>Login</span>
                                     <br/>
-                                    <input {...input}
-                                           className={hasError ? s.input + ' ' + s.errorInput : s.input}
-                                           placeholder="Enter your e-mail or login"/>
+                                    <Input {...input} placeholder="Enter your e-mail or login"
+                                           className={hasError ? s.input + ' ' + s.errorInput : s.input}/>
                                     {meta.error && meta.touched && <span className={s.spanError}>{meta.error}</span>}
                                 </div>)
                         }}

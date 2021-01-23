@@ -42,7 +42,10 @@ export const signIn = (formData) => (dispatch) => {
             if (response.data.resultCode === 0) {
                 console.log('login!')
                 dispatch(getAuthUserData());
-            } else console.log('Email or password are false... try again')
+            } else {
+
+                console.log('Email or password are false... try again')
+            }
         })
 }
 
