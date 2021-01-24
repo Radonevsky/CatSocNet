@@ -1,0 +1,18 @@
+input{
+    margin: 10px 5px 10px 0px;
+    width: 300px;
+    font-size: 13px;
+    padding: 6px 0 4px 10px;
+    border: 1px solid;
+    border-radius: 8px;
+}
+
+.formControl.error input {
+    border: solid red 2px
+}
+
+
+.formControl.error span {
+    font-weight: bold;
+    color: #d91818;
+}

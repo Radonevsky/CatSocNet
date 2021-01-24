@@ -2,10 +2,12 @@ import React from "react";
 import {Field, Form} from "react-final-form";
 import {FORM_ERROR} from 'final-form'
 import s from './LoginForm.module.css';
-import {required,
+import {
+    required,
     maxLengthCreator,
     minLengthCreator,
-    composeValidators} from './../../utils/validators/validators.js';
+    composeValidators
+} from './../../utils/validators/validators.js';
 import {Input} from "../common/FormsControls/FormsControls";
 
 console.warn('Put the LoginForm style management in a separate file')
@@ -16,34 +18,24 @@ const LoginForm = (props) => (
             <form onSubmit={handleSubmit} className={s.form}>
                 <h2>Hello!</h2>
                 <div>
-                    <Field name="email"
-                           validate={composeValidators(required, maxLengthCreator(10), minLengthCreator(4))}>
+                    <Field name="Login"
+                           validate={composeValidators(required, maxLengthCreator(50), minLengthCreator(4))}>
                         {({input, meta}) => {
-                            let hasError = meta.error && meta.touched;
                             return (
                                 <div>
-                                    <span className={hasError ? s.spanError : ''}>Login</span>
-                                    <br/>
-                                    <Input {...input} placeholder="Enter your e-mail or login"
-                                           className={hasError ? s.input + ' ' + s.errorInput : s.input}/>
-                                    {meta.error && meta.touched && <span className={s.spanError}>{meta.error}</span>}
+                                    <Input {...input} {...meta} placeholder="Enter your e-mail or login"/>
                                 </div>)
                         }}
                     </Field>
                 </div>
                 <div>
-                    <Field name="password" validate={required}>
+                    <Field name="Password" validate={required}>
                         {({input, meta}) => {
-                            let hasError = meta.error && meta.touched;
                             return (
                                 <div>
-                                    <span className={hasError ? s.spanError : ''}>Password</span>
-                                    <br/>
-                                    <input {...input}
+                                    <Input {...input} {...meta}
                                            type={"password"}
-                                           className={hasError ? s.input + ' ' + s.errorInput : s.input}
                                            placeholder="Enter your password"/>
-                                    {meta.error && meta.touched && <span className={s.spanError}>{meta.error}</span>}
                                 </div>)
                         }}
                     </Field>
