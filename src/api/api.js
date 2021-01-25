@@ -6,7 +6,7 @@ const instance = axios.create({
     headers: {
         "API-KEY": "75b330fd-7728-402d-a06e-4f0f4a361963"
     }
-})
+});
 
 export const usersAPI = {
 
@@ -18,16 +18,16 @@ export const usersAPI = {
             });
     },
     getProfile(userId) {
-        console.warn('Obsolete method. Please use profileAPI object')
-        return profileAPI.getProfile(userId)
+        console.warn('Obsolete method. Please use profileAPI object');
+        return profileAPI.getProfile(userId);
     },
 
     clickUnFollow(id) {
-        return instance.delete(`follow/${id}`)
+        return instance.delete(`follow/${id}`);
     },
 
     clickFollow(id) {
-        return instance.post(`follow/${id}`)
+        return instance.post(`follow/${id}`);
     }
 
 }
@@ -35,36 +35,36 @@ export const usersAPI = {
 export const profileAPI = {
 
     getProfile(userId) {
-        return instance.get(`profile/${userId}`)
+        return instance.get(`profile/${userId}`);
     },
 
     getStatus(userId) {
-        return instance.get(`profile/status/${userId}`)
+        return instance.get(`profile/status/${userId}`);
     },
 
     updateStatus(status) {
-        return instance.put(`profile/status`, {status: status})
+        return instance.put(`profile/status`, {status: status});
     }
 }
 
-
 export const authAPI = {
     me() {
-        return instance.get(`auth/me`)
+        return instance.get(`auth/me`);
     },
 
     login(formData) {
-        console.log('request...')
+        console.log('request...');
+
         return instance.post('auth/login',
             {
                 email: formData.email,
                 password: formData.password,
                 rememberMe: formData.rememberMe
-            })
+            });
     },
 
     logout() {
-        console.log('request...')
-        return instance.delete('auth/login')
+        console.log('request...');
+        return instance.delete('auth/login');
     }
 }

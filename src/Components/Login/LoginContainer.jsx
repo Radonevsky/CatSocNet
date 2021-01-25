@@ -7,21 +7,21 @@ import {Redirect} from "react-router-dom";
 class LoginContainer extends React.Component {
 
     onSubmit = (formData) => {
-        console.log('login pressed')
+        console.log('login pressed');
         this.props.signIn(formData);
-
     }
 
     render() {
         if (this.props.isAuth) {
             return <Redirect to={"/profile"}/>
         }
-        return <LoginForm onSubmit={this.onSubmit}/>
+        return <LoginForm onSubmit={this.onSubmit} serverError={this.props.serverError}/>
     }
 }
 
 const mapStateToProps = (state) => ({
-    isAuth: state.auth.isAuth
+    isAuth: state.auth.isAuth,
+    serverError: state.auth.serverError
 })
 console.warn('mapStateToProps is empty!')
 export default connect (mapStateToProps, {signIn}) (LoginContainer);

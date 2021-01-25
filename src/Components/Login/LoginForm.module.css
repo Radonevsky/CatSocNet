@@ -2,3 +2,7 @@
     padding: 0px 50px;
 }
 
+.error {
+    font-weight: bold;
+    color: #d91818;
+}
