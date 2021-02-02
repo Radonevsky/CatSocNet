@@ -1,6 +1,5 @@
 import React from "react";
 import {Field, Form} from "react-final-form";
-import {FORM_ERROR} from 'final-form'
 import s from './LoginForm.module.css';
 import {
     required,
@@ -15,7 +14,7 @@ console.warn('Put the LoginForm style management in a separate file')
 const LoginForm = (props) => (
     <Form
         onSubmit={props.onSubmit}
-        render={({handleSubmit}) => (
+        render={({handleSubmit, submitError}) => (
             <form onSubmit={handleSubmit} className={s.form}>
                 <h2>Hello!</h2>
                 <div>
@@ -48,7 +47,7 @@ const LoginForm = (props) => (
                     </Field>
                 </div>
                 <div>
-                    {props.serverError && <div className={s.error}>Error! {props.serverError}</div>}
+                    {submitError && <div className={s.error}>Error! {submitError}</div>}
                 </div>
                 <div>
                     <label>Remember me</label>

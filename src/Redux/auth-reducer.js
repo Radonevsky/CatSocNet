@@ -1,9 +1,9 @@
 import {authAPI, usersAPI} from "../api/api";
 import React from "react";
+import {FORM_ERROR} from "final-form";
 
 const SET_USER_DATA = 'SET_USER_DATA';
-const SET_SUBMIT_ERROR = 'SET_SUBMIT_ERROR';
-const CLEAR_SERVER_ERROR = 'CLEAR_SERVER_ERROR';
+
 
 let initialState = {
     userId: null,
@@ -22,18 +22,6 @@ const authReducer = (state = initialState, action) => {
                 ...action.payload,
             };
 
-        case SET_SUBMIT_ERROR:
-            return {
-                ...state,
-                serverError: action.error
-            };
-
-        case CLEAR_SERVER_ERROR:
-            return {
-                ...state,
-                serverError: null
-            }
-
         default:
             return state;
     }
@@ -43,8 +31,6 @@ export const setAuthUserData = (userId, login, email, isAuth) => ({
     type: SET_USER_DATA,
     payload: {userId, login, email, isAuth}
 });
-export const setSubmitError = error => ({type: SET_SUBMIT_ERROR, error: error});
-export const clearServerError = () => ({type: CLEAR_SERVER_ERROR})
 
 export const getAuthUserData = () => (dispatch) => {
     authAPI.me()
@@ -56,21 +42,20 @@ export const getAuthUserData = () => (dispatch) => {
         });
 }
 
-export const signIn = (formData) => (dispatch) => {
+export const signIn = (formData) =>
+    (dispatch) => {
+        return authAPI.login(formData)
+            .then(response => {
+                if (response.data.resultCode === 0) {
+                    console.log('login!')
+                    dispatch(getAuthUserData());
+                }
+                else {
+                    console.log('Oops! '+ response.data.messages)
+                    return {[FORM_ERROR]: response.data.messages}
+                }
 
-    authAPI.login(formData)
-        .then(response => {
-            if (response.data.resultCode === 0) {
-                console.log('login!')
-                dispatch(getAuthUserData());
-                dispatch(clearServerError());
-            } else {
-                console.log('error! dispatching...');
-            let error = response.data.messages;
-                dispatch(setSubmitError(error));
-
-            }
-        })
+            })
 }
 
 export const logout = () => (dispatch) => {

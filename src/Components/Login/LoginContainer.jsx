@@ -4,19 +4,16 @@ import {connect} from "react-redux";
 import {signIn} from "../../Redux/auth-reducer";
 import {Redirect} from "react-router-dom";
 
-class LoginContainer extends React.Component {
-
-    onSubmit = (formData) => {
+const LoginContainer =(props) => {
+    const onSubmit = async formData => {
         console.log('login pressed');
-        this.props.signIn(formData);
+        const res = await props.signIn(formData);
+        return res;
     }
-
-    render() {
-        if (this.props.isAuth) {
+        if (props.isAuth) {
             return <Redirect to={"/profile"}/>
         }
-        return <LoginForm onSubmit={this.onSubmit} serverError={this.props.serverError}/>
-    }
+        return <LoginForm onSubmit={onSubmit}/>
 }
 
 const mapStateToProps = (state) => ({
