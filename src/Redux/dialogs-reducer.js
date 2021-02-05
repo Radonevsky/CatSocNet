@@ -15,11 +15,11 @@ let initialState = {
         {id: 1, message: 'Hi, world'},
         {id: 2, message: 'How are you'},
         {id: 3, message: 'What is your name'},
-        {id: 4, message: 'Nahuyarimsa?'},
+        {id: 4, message: 'Napyemsa?'},
         {id: 4, message: 'MEW!! I am really angry'},
         {id: 5, message: 'pau, pau, rrrr'},
         {id: 6, message: 'I want to eat'},
-        {id: 7, message: 'I am running, i am busy'}
+        {id: 7, message: `I'm running, i'm busy`}
     ],
 };
 
