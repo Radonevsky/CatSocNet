@@ -31,40 +31,33 @@ export const setAuthUserData = (userId, login, email, isAuth) => ({
     payload: {userId, login, email, isAuth}
 });
 
-export const getAuthUserData = () => (dispatch) => {
-   return authAPI.me()
-        .then(response => {
-            if (response.data.resultCode === 0) {
-                let {id, login, email} = response.data.data
-                dispatch(setAuthUserData(id, login, email, true))
-            }
-        });
-}
+export const getAuthUserData = () =>
+    async (dispatch) => {
+        let response = await authAPI.me();
+        if (response.data.resultCode === 0) {
+            let {id, login, email} = response.data.data;
+            dispatch(setAuthUserData(id, login, email, true));
+        }
+    }
 
 export const signIn = (formData) =>
-    (dispatch) => {
-        return authAPI.login(formData)
-            .then(response => {
-                if (response.data.resultCode === 0) {
-                    console.log('login!')
-                    dispatch(getAuthUserData());
-                }
-                else {
-                    console.log('Oops! '+ response.data.messages)
-                    return {[FORM_ERROR]: response.data.messages}
-                }
+    async (dispatch) => {
+        let response = await authAPI.login(formData);
+        if (response.data.resultCode === 0) {
+            console.log('login!');
+            dispatch(getAuthUserData());
+        } else {
+            console.log('Oops! ' + response.data.messages);
+            return {[FORM_ERROR]: response.data.messages}
+        }
+    }
 
-            })
-}
-
-export const logout = () => (dispatch) => {
-    authAPI.logout()
-        .then(response => {
-            if (response.data.resultCode === 0) {
-                dispatch(setAuthUserData(null, null, null, false));
-                console.log('Logout!')
-            }
-        })
-}
-
+export const logout = () =>
+    async (dispatch) => {
+        let response = await authAPI.logout();
+        if (response.data.resultCode === 0) {
+            dispatch(setAuthUserData(null, null, null, false));
+            console.log('Logout!');
+        }
+    }
 export default authReducer;

@@ -11,12 +11,9 @@ const instance = axios.create({
 export const usersAPI = {
 
     getUsers(currentPage, pageSize) {
-
         return instance.get(`users?page=${currentPage}&count=${pageSize}`)
-            .then(response => {
-                return response.data;
-            });
     },
+
     getProfile(userId) {
         console.warn('Obsolete method. Please use profileAPI object');
         return profileAPI.getProfile(userId);
