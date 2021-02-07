@@ -3,7 +3,6 @@
     height: 100px;
 }
 
-.selectedPage{
-    font-weight: bold;
-    color: #980343;
+.usersPage {
+    padding-left: 20px;
 }

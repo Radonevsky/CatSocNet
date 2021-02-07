@@ -1,0 +1,51 @@
+.page {
+    display: inline-block;
+    height:40px;
+    line-height: 40px;
+    width: 40px;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-inline: 2px;
+}
+
+.selectedPage{
+    display: inline-block;
+    font-weight: bold;
+    color: #980343;
+    height: 40px;
+    line-height: 40px;
+    width: 40px;
+    text-align: center;
+    border: 2px solid #980343;
+    border-radius: 10px;
+}
+
+.preloader{
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    width: 40px;
+    text-align: center;
+    border: 2px solid #980343;
+    border-radius: 10px;
+}
+
+.preloader img{
+
+    transform: rotate(90deg);
+    width: 20px;
+}
+
+.paginator {
+    padding: 10px;
+    font-size: 20px;
+}
+
+.button {
+    display: inline-block;
+    width: 60px;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+}
