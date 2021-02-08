@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5beabb3beffea67c03c27f6aa74a10fb",
+    "revision": "22846e5aacad21cde77ed122e7bad128",
     "url": "/CatSocNet/index.html"
   },
   {
@@ -12,7 +12,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/CatSocNet/static/css/4.8f1a8f23.chunk.css"
   },
   {
-    "revision": "03c669ee95c694d40604",
+    "revision": "89d10c16a9f7de916628",
     "url": "/CatSocNet/static/css/main.0e59d01d.chunk.css"
   },
   {
@@ -32,8 +32,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/CatSocNet/static/js/4.250de731.chunk.js"
   },
   {
-    "revision": "03c669ee95c694d40604",
-    "url": "/CatSocNet/static/js/main.9f35500a.chunk.js"
+    "revision": "89d10c16a9f7de916628",
+    "url": "/CatSocNet/static/js/main.a0ea37f8.chunk.js"
   },
   {
     "revision": "2755a3691cbff8863ec2",
