@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/https,://radonevsky.github.io/CatSocNet/static/css/main.bc8ce726.chunk.css",
+    "main.js": "/https,://radonevsky.github.io/CatSocNet/static/js/main.966070ec.chunk.js",
+    "main.js.map": "/https,://radonevsky.github.io/CatSocNet/static/js/main.966070ec.chunk.js.map",
+    "runtime-main.js": "/https,://radonevsky.github.io/CatSocNet/static/js/runtime-main.90ebe343.js",
+    "runtime-main.js.map": "/https,://radonevsky.github.io/CatSocNet/static/js/runtime-main.90ebe343.js.map",
+    "static/js/2.d4ffe79f.chunk.js": "/https,://radonevsky.github.io/CatSocNet/static/js/2.d4ffe79f.chunk.js",
+    "static/js/2.d4ffe79f.chunk.js.map": "/https,://radonevsky.github.io/CatSocNet/static/js/2.d4ffe79f.chunk.js.map",
+    "static/css/3.bd590e61.chunk.css": "/https,://radonevsky.github.io/CatSocNet/static/css/3.bd590e61.chunk.css",
+    "static/js/3.adadf038.chunk.js": "/https,://radonevsky.github.io/CatSocNet/static/js/3.adadf038.chunk.js",
+    "static/js/3.adadf038.chunk.js.map": "/https,://radonevsky.github.io/CatSocNet/static/js/3.adadf038.chunk.js.map",
+    "static/css/4.8f1a8f23.chunk.css": "/https,://radonevsky.github.io/CatSocNet/static/css/4.8f1a8f23.chunk.css",
+    "static/js/4.256e94d4.chunk.js": "/https,://radonevsky.github.io/CatSocNet/static/js/4.256e94d4.chunk.js",
+    "static/js/4.256e94d4.chunk.js.map": "/https,://radonevsky.github.io/CatSocNet/static/js/4.256e94d4.chunk.js.map",
+    "index.html": "/https,://radonevsky.github.io/CatSocNet/index.html",
+    "precache-manifest.ed2755e66419c9e46668b6557079daeb.js": "/https,://radonevsky.github.io/CatSocNet/precache-manifest.ed2755e66419c9e46668b6557079daeb.js",
+    "service-worker.js": "/https,://radonevsky.github.io/CatSocNet/service-worker.js",
+    "static/css/3.bd590e61.chunk.css.map": "/https,://radonevsky.github.io/CatSocNet/static/css/3.bd590e61.chunk.css.map",
+    "static/css/4.8f1a8f23.chunk.css.map": "/https,://radonevsky.github.io/CatSocNet/static/css/4.8f1a8f23.chunk.css.map",
+    "static/css/main.bc8ce726.chunk.css.map": "/https,://radonevsky.github.io/CatSocNet/static/css/main.bc8ce726.chunk.css.map",
+    "static/js/2.d4ffe79f.chunk.js.LICENSE.txt": "/https,://radonevsky.github.io/CatSocNet/static/js/2.d4ffe79f.chunk.js.LICENSE.txt",
+    "static/media/lookingForAJob.jpg": "/https,://radonevsky.github.io/CatSocNet/static/media/lookingForAJob.ed1a66cd.jpg",
+    "static/media/preloader.gif": "/https,://radonevsky.github.io/CatSocNet/static/media/preloader.584b607f.gif",
+    "static/media/user1.png": "/https,://radonevsky.github.io/CatSocNet/static/media/user1.0ea45980.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.90ebe343.js",
+    "static/js/2.d4ffe79f.chunk.js",
+    "static/css/main.bc8ce726.chunk.css",
+    "static/js/main.966070ec.chunk.js"
+  ]
+}
