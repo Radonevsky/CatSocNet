@@ -25,7 +25,7 @@ let initialState = {
             name: 'Sonya',
             avaPath: 'https://forum.grodno.net/index.php?action=dlattach;topic=4146410.0;attach=2685201;image'
         },
-        {id: 5, name: 'Ivi', avaPath: 'http://чихуахуа.рф/females/images/photo%20Berta/7.jpg'},
+        {id: 5, name: 'Ivi', avaPath: 'https://club.xdogs.ru/images/stati/kormlenie_toy_terera1.jpg'},
         {
             id: 6,
             name: 'Zemfira',
