@@ -25,10 +25,10 @@ const MyPostsForm = (props) => (
         render={({handleSubmit}) => (
             <form onSubmit={handleSubmit}>
                 <div>
-                    <Field component={"input"} placeholder={"Enter your post"} name={"newPostText"}/>
+                    <Field component={"textarea"} placeholder={"Enter your post"} name={"newPostText"} className={s.textarea}/>
                 </div>
                 <div>
-                    <button type="submit">Add post</button>
+                    <button type="submit" className={s.button}>Add post</button>
                 </div>
             </form>
         )}

@@ -19,7 +19,7 @@ let Users = (props) => {
                         <img src={u.photos.small !== null ? u.photos.small : userPhoto} className={styles.userPhoto}/>
                         </NavLink>
                     </div>
-                    <div>
+                    <div className={styles.follow}>
                         {u.followed
                             ? <button disabled={props.followingInProgress.some(id => id === u.id)}
                                       onClick={() => {

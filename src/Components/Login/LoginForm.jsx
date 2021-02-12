@@ -9,14 +9,13 @@ import {
 } from './../../utils/validators/validators.js';
 import {Input} from "../common/FormsControls/FormsControls";
 
-
 console.warn('Put the LoginForm style management in a separate file')
 const LoginForm = (props) => (
     <Form
         onSubmit={props.onSubmit}
         render={({handleSubmit, submitError}) => (
             <form onSubmit={handleSubmit} className={s.form}>
-                <h2>Hello!</h2>
+                <h2>Please enter your username and password</h2>
                 <div>
                     <Field name="email"
                            validate={composeValidators(required, maxLengthCreator(50), minLengthCreator(4))}>
@@ -54,7 +53,7 @@ const LoginForm = (props) => (
                     <Field name="rememberMe" component="input" type="checkbox"/>
                 </div>
                 <div>
-                    <button type="submit">Login</button>
+                    <button className={s.login} type="submit">Login</button>
                 </div>
 
 

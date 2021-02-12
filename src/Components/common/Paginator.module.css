@@ -40,12 +40,17 @@
 .paginator {
     padding: 10px;
     font-size: 20px;
+ width: 700px;
 }
 
 .button {
     display: inline-block;
-    width: 60px;
     text-align: center;
     height: 40px;
     line-height: 40px;
+}
+
+.button button {
+    height: 40px;
+    width: 60px;
 }

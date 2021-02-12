@@ -7,17 +7,17 @@ const ProfileStatusWithHooks = (props) => {
     let [status, setStatus] = useState(props.status);
     useEffect(() => {
         setStatus(props.status);
-    }, [props.status])
+    }, [props.status]);
 
     const activateEditMode = () => {
-        setEditMode(true)
+        setEditMode(true);
     }
     const deactivateEditMode = () => {
         setEditMode(false);
-        props.updateStatus(status)
+        props.updateStatus(status);
     }
     const onStatusChange = (e) => {
-        setStatus(e.currentTarget.value)
+        setStatus(e.currentTarget.value);
     }
 
     return (

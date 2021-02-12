@@ -1,38 +1,55 @@
 .profileWrapper {
     display: grid;
     width: 1200px;
+    height: 530px;
     grid-template-areas: "description photo";
-    grid-template-columns: 300px 300px;
-    grid-template-rows:500px;
+    grid-template-columns: 400px 300px;
+    grid-template-rows:300px;
+    margin-left: 30px;
+    border-bottom: 1px solid #980343;
 
     /* grid-gap: 10px*/
 }
-
-.descriptionBlock {
-    grid-area: description;
-    padding: 30px;
-
+.infoBlock {
+    margin-top: 20px;
+    font-size: 18px;
 }
 
 .fullName {
     font-size: 30px;
     font-weight: bold;
+    color: #980343;
+    margin-left: 30px;
 }
 
-.img img{
-    padding-left: 30px;
-    max-width: 925px;
+.img img {
+    border-radius: 100px;
+
 }
 
 .jobImg img{
     max-width: 150px;
 }
+.largeUserPhoto {
+    width:340px;
+    height: 400px;
+    border: 1px solid #980343;
+    border-radius: 80px;
+}
 
 .largeUserPhoto img{
     grid-area: photo;
     max-width: 300px;
+    max-height: 300px;
+    border: none;
 }
 
 .status{
     margin-left: 30px;
+    margin-bottom: 30px;
+}
+
+.changeButton{
+    width: 200px;
+    margin-left: 75px;
 }

@@ -2,7 +2,7 @@
     grid-area: n;
     background-color: #d2e5fc;
     padding: 10px;
-
+border-right: 1px solid #980343;
 }
 
 .item a {

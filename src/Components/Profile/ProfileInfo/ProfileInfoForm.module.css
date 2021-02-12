@@ -1,0 +1,59 @@
+.form {
+    margin: 10px 40px 0px 0px;
+}
+
+.form input{
+    margin: 0px 0px 1px 0px;
+    width: 180px;
+    height: 20px;
+    font-size: 13px;
+    padding: 1px 0 1px 5px;
+    border: 1px solid #980343;
+    border-radius: 8px;
+    float: right;
+}
+
+.contacts {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.contactsItem {
+    margin-top: 5px;
+}
+
+.fullName {
+    height: 30px;
+    margin: 20px 5px 0px 0px;
+    font-size: 14px;
+    padding: 0px 0px 5px 10px;
+}
+
+.form label{
+    font-size: 18px;
+}
+
+.form button {
+    margin-left: 90px;
+    width: 100px;
+    height: 25px;
+    border: 3px solid #980343;
+    border-radius: 15px;
+}
+.textarea {
+    width: 210px; /* Ширина поля в процентах */
+    height: 40px; /* Высота поля в пикселах */
+    resize: none; /* Запрещаем изменять размер */
+    border-radius: 10px;
+    margin-left: 10px;
+
+}
+.formDiv{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.errors {
+    font-weight: bold;
+    color: #d91818;
+}

@@ -10,8 +10,18 @@
 
 .postsBlock{
     padding-left: 30px;
+    margin-top: 50px;
 }
 
 .send {
     padding: 30px;
+}
+
+.button {
+    width: 150px;
+}
+
+.textarea {
+    border: 1px solid #980343;
+    border-radius: 5px;
 }

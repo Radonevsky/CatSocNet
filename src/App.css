@@ -2,7 +2,7 @@
     display: grid;
     width: 1200px;
     grid-template-areas: "h h" "n c";
-    grid-template-columns: 150px 960px;
+    grid-template-columns: 150px 1000px;
     grid-template-rows: 100px 1500px;
     padding-left: 50px;
     /* grid-gap: 10px*/

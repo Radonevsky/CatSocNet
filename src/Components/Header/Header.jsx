@@ -1,11 +1,12 @@
 import React from 'react';
 import s from './Header.module.css';
 import {NavLink} from "react-router-dom";
+import logo from '../../assets/images/Logo2.png'
 
 const Header = (props) => {
     return <header className={s.header}>
-        <img
-            src="https://i.ibb.co/85cWQth/Logo2.png"
+        <img className={s.logo}
+            src={logo}
             alt="logo"/>
 
         <div className={s.loginBlock}>
@@ -14,7 +15,7 @@ const Header = (props) => {
                     {props.login}
                     <button onClick={props.logout}>Log out</button>
                   </div>
-                : <NavLink to={'/login'}>Login</NavLink>}
+                : <NavLink to={'/login'} className={s.login}>Login</NavLink>}
         </div>
     </header>
 }

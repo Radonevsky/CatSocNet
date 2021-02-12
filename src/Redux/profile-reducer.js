@@ -64,11 +64,9 @@ export const deletePost = (postId) => ({type: DELETE_POST, postId})
 export const saveNewAvaSuccess = (ava) => ({type: SAVE_NEW_AVA_SUCCESS, ava})
 
 
-
-
 export const getUserProfile = (userId) =>
     async (dispatch) => {
-        let response = await usersAPI.getProfile(userId);
+        let response = await profileAPI.getProfile(userId);
         dispatch(setUserProfile(response.data));
     }
 
@@ -95,6 +93,17 @@ export const saveNewAva = (ava) =>
         if (response.data.resultCode === 0) {
             dispatch(saveNewAvaSuccess(response.data.data.photos));
             console.log('New photo has been saved');
+        }
+    }
+
+export const changeProfileInfo = (data) =>
+    async (dispatch, getState) => {
+        console.log('Sending the new profile info...');
+        let response = await profileAPI.setNewProfileInfo(data);
+        if (response.data.resultCode === 0) {
+            const userId = getState().auth.userId;
+            dispatch(getUserProfile(userId));
+            console.log('New profile info has been saved');
         }
     }
 
