@@ -4,8 +4,10 @@ import s from './ProfileInfoForm.module.css'
 import toFirstUpperCase from "../../../utils/ToFirstUpperCase";
 
 const ProfileInfoForm = (props) => {
-    const {register, handleSubmit, errors} = useForm();
-    const onSubmit = (data) => {
+    const {register, handleSubmit, errors, setError, clearErrors} = useForm();
+
+    const onSubmit = async data => {
+        console.log('submit pressed')
         const formData = {
             aboutMe: data.aboutMe,
             contacts: {
@@ -23,15 +25,21 @@ const ProfileInfoForm = (props) => {
             fullName: data.fullName
         }
         //console.log(formData);
-        props.changeProfileInfo(formData);
-        props.formEditMode();
+        const serverError = await props.changeProfileInfo(formData);
+        serverError ? setError("serverErrors", {
+                message: serverError.errorMessages
+            })
+            : props.formEditMode();
     }
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} className={s.form}>
-            <button>
-                Update
+            <button onClick={()=>clearErrors("serverErrors")}>
+                Save
             </button>
+            {errors.serverErrors && <div name='serverErrors' ref={register}
+                                         className={s.errors}>{errors.serverErrors.message.map(e=><div>{e}</div>)}</div>}
+
             <div className={s.formDiv}>
                 <label>About me:</label><br/>
                 <textarea name='aboutMe' defaultValue={props.aboutMe}
@@ -74,6 +82,7 @@ const ProfileInfoForm = (props) => {
             </div>
         </form>
     );
+
 }
 
 export default ProfileInfoForm;

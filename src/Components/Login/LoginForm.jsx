@@ -52,8 +52,8 @@ const LoginForm = (props) => (
                     <label>Remember me</label>
                     <Field name="rememberMe" component="input" type="checkbox"/>
                 </div>
-                <div>
-                    <button className={s.login} type="submit">Login</button>
+                <div className={s.login}>
+                    <button  type="submit">Login</button>
                 </div>
 
 

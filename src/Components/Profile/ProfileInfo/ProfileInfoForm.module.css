@@ -49,8 +49,11 @@
 
 }
 .formDiv{
-    margin-top: 10px;
-    margin-bottom: 10px;
+margin: 10px 0px 10px 0px;
+}
+
+.formDiv label{
+    margin-left: 10px;
 }
 
 .errors {

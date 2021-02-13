@@ -1,4 +1,6 @@
 import {profileAPI, usersAPI} from "../api/api";
+import {FORM_ERROR} from "final-form";
+import {getAuthUserData} from "./auth-reducer";
 
 const ADD_POST = 'ADD-POST';
 const SET_USER_PROFILE = 'SET_USER_PROFILE';
@@ -105,6 +107,11 @@ export const changeProfileInfo = (data) =>
             dispatch(getUserProfile(userId));
             console.log('New profile info has been saved');
         }
+        else {
+            console.log('Oops! ' + response.data.messages);
+            return {errorMessages: response.data.messages}
+        }
+
     }
 
 export default profileReducer;
