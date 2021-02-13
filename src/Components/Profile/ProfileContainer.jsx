@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 import {changeProfileInfo, getStatus, getUserProfile, saveNewAva, updateStatus} from "../../Redux/profile-reducer";
 import {withRouter} from "react-router-dom";
 import {compose} from "redux";
+import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 
 class ProfileContainer extends React.Component {
     refreshProfile() {
@@ -54,6 +55,4 @@ export default compose(
         getUserProfile, getStatus, updateStatus, saveNewAva,
         changeProfileInfo
     }),
-    withRouter,
-    //withAuthRedirect
-)(ProfileContainer)
+    withRouter, withAuthRedirect)(ProfileContainer)

@@ -13,12 +13,13 @@ const LoginContainer =(props) => {
         if (props.isAuth) {
             return <Redirect to={"/profile"}/>
         }
-        return <LoginForm onSubmit={onSubmit}/>
+        return <LoginForm onSubmit={onSubmit} captchaUrl={props.captchaUrl}/>
 }
 
 const mapStateToProps = (state) => ({
     isAuth: state.auth.isAuth,
-    serverError: state.auth.serverError
+    serverError: state.auth.serverError,
+    captchaUrl: state.auth.captchaUrl
 })
-console.warn('mapStateToProps is empty!')
+
 export default connect (mapStateToProps, {signIn}) (LoginContainer);

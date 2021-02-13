@@ -52,10 +52,23 @@ const LoginForm = (props) => (
                     <label>Remember me</label>
                     <Field name="rememberMe" component="input" type="checkbox"/>
                 </div>
+                {props.captchaUrl && <div className={s.captcha}>
+                    <img src={props.captchaUrl} alt="please refresh"/></div>}
+                {props.captchaUrl && <Field name="captcha" validate={required}>
+                    {({input, meta}) => {
+                        return (
+                            <div>
+                                <span>Please enter the captcha</span>
+                                <div>
+                                    <Input {...input} {...meta}
+                                           placeholder="Enter the captcha"/>
+                                </div>
+                            </div>)
+                    }}
+                </Field>}
                 <div className={s.login}>
-                    <button  type="submit">Login</button>
+                    <button type="submit">Login</button>
                 </div>
-
 
             </form>
         )}
