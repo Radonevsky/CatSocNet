@@ -1,10 +1,16 @@
 # Social Network
 Frontend on react redux
 
-For auth on github pages use: 
-login radonevsky@yandex.ru
-pass ReactJS21
+For auth on github pages use:  
+login radonevsky@yandex.ru  
+pass ReactJS21  
 https://radonevsky.github.io/CatSocNet
+
+***Install***  
+To install the developer version of the app, you must have installed node.js.  
+After cloning the repository, use the npm commands:  
+to install all dependencies: ```npm i```,  
+to start dev server: ```npm start```
 
 While developing this project, I learned how to solve problems:
 1) Creating a business logic layer using the redux library;
